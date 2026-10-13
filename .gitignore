@@ -9,3 +9,12 @@ wheels/
 # Virtual environments
 .venv
 SPEC.md
+.env
+
+# Secrets
+.env
+.env.*
+
+# Private resume data: original PDF, unredacted Markdown, private index
+*.pdf
+data/private/
