@@ -108,3 +108,26 @@ def test_loading_an_index_built_with_a_different_model_fails_clearly(tmp_path):
 
     with pytest.raises(EmbeddingModelMismatch, match="old-model.*new-model"):
         load_index(tmp_path / "idx", embedding_model="new-model")
+
+
+def test_building_from_a_resume_with_no_content_fails_clearly():
+    with pytest.raises(ValueError, match="no chunks"):
+        build_index("", FakeEmbedder())
+
+
+def test_a_zero_vector_from_the_embedder_fails_clearly():
+    class ZeroEmbedder(FakeEmbedder):
+        def embed(self, texts: list[str]) -> list[list[float]]:
+            return [[0.0, 0.0] for _ in texts]
+
+    with pytest.raises(ValueError, match="zero vector"):
+        build_index(RESUME, ZeroEmbedder())
+
+
+def test_loading_vectors_that_do_not_match_the_chunks_fails_clearly(tmp_path):
+    index = build_index(RESUME, FakeEmbedder())
+    save_index(index, tmp_path / "idx")
+    np.save(tmp_path / "idx" / "vectors.npy", index.vectors[:-1])
+
+    with pytest.raises(ValueError, match="rows"):
+        load_index(tmp_path / "idx", embedding_model="fake-embed-1")

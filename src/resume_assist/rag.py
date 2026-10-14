@@ -41,8 +41,13 @@ class Index:
 def build_index(markdown: str, embedder: EmbeddingClient) -> Index:
     """Chunk the resume Markdown and embed every chunk."""
     chunks = chunk_resume(markdown)
+    if not chunks:
+        raise ValueError("The resume Markdown produced no chunks to embed.")
     vectors = np.array(embedder.embed([c.text for c in chunks]), dtype=np.float32)
-    vectors /= np.linalg.norm(vectors, axis=1, keepdims=True)
+    norms = np.linalg.norm(vectors, axis=1, keepdims=True)
+    if (norms == 0).any():
+        raise ValueError("The embedding client returned a zero vector, which can't be normalised.")
+    vectors /= norms
     return Index(chunks=chunks, vectors=vectors, embedding_model=embedder.model)
 
 
@@ -55,12 +60,12 @@ def chunk_resume(markdown: str) -> list[Chunk]:
     section = ""
     for line in markdown.splitlines():
         if line.startswith("### "):
-            sections.append((f"{section}{HEADING_SEPARATOR}{line[4:].strip()}", []))
+            sections.append((f"{section}{HEADING_SEPARATOR}{line.removeprefix("### ").strip()}", []))
         elif line.startswith("## "):
-            section = line[3:].strip()
+            section = line.removeprefix("## ").strip()
             sections.append((section, []))
         elif line.startswith("# "):
-            sections.append((line[2:].strip(), []))
+            sections.append((line.removeprefix("# ").strip(), []))
         elif sections:
             sections[-1][1].append(line)
 
@@ -92,8 +97,11 @@ def load_index(directory: Path, embedding_model: str) -> Index:
             f"Index in {directory} was built with '{payload['embedding_model']}' but the configured "
             f"model is '{embedding_model}'. Rebuild it with `resume-assist build-index`."
         )
-    return Index(
-        chunks=[Chunk(**c) for c in payload["chunks"]],
-        vectors=np.load(directory / VECTORS_FILE),
-        embedding_model=payload["embedding_model"],
-    )
+    chunks = [Chunk(**c) for c in payload["chunks"]]
+    vectors = np.load(directory / VECTORS_FILE)
+    if len(vectors) != len(chunks):
+        raise ValueError(
+            f"Index in {directory} has {len(chunks)} chunks but {len(vectors)} vector rows. "
+            "Rebuild it with `resume-assist build-index`."
+        )
+    return Index(chunks=chunks, vectors=vectors, embedding_model=payload["embedding_model"])
