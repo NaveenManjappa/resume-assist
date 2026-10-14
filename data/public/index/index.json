@@ -1,0 +1,60 @@
+{
+  "embedding_model": "text-embedding-3-small",
+  "chunks": [
+    {
+      "id": 0,
+      "heading": "Naveen Manjappa",
+      "text": "Naveen Manjappa\n\nAI Engineer | RAG and Agentic AI Systems | Principal Consultant\n\nBased in Reading, UK."
+    },
+    {
+      "id": 1,
+      "heading": "Contact",
+      "text": "Contact\n\n- Email: naveenKmanjappa@gmail.com\n- LinkedIn: https://www.linkedin.com/in/naveenmanjappa/\n- GitHub: https://github.com/naveenmanjappa"
+    },
+    {
+      "id": 2,
+      "heading": "Summary",
+      "text": "Summary\n\nAI Engineer and Principal Consultant building practical LLM, RAG and agentic systems for enterprise software and customer operations. Built and contributed to AI assistants for a commercial warehouse management platform across product documentation and operational knowledge use cases, helping reduce customer feature queries by 80% and queries reaching product owners by 50%.\n\nBuilt a personal agentic RAG application using Python, FastAPI, LangChain, LangGraph, OpenAI, Gemini and Qdrant, with guardrails, observability and evaluation pipelines. Backed by 14+ years in software engineering across C#, .NET, REST APIs, SQL Server and Azure, spanning technical design, enterprise integration, SaaS delivery and mentoring."
+    },
+    {
+      "id": 3,
+      "heading": "Experience › Manhattan Associates, Principal Consultant, January 2021 – present",
+      "text": "Experience › Manhattan Associates, Principal Consultant, January 2021 – present\n\nEmployer: Manhattan Associates  \nRole: Principal Consultant  \nDates: January 2021 – present  \nLocation: Winnersh Triangle, United Kingdom  \n\n- Developed backend API components and document-ingestion functionality for SCALE Assist, a RAG-based product documentation assistant, using C#/.NET, REST APIs and Gemini-powered LLM services, helping reduce customer feature queries by 80%.\n- Contributed to backend and document-ingestion functionality for SCALE SOP Assist, a RAG-based operational knowledge assistant, helping reduce queries reaching product owners by 50%.\n- Led technical scoping and migration strategies for cloud-based SaaS transitions, generating more than $1M in recurring revenue.\n- Designed scalable Azure Functions extensions across scoping, technical design, implementation and go-live.\n- Designed and developed a low-latency REST API integration for an automated Ocado robotic picking operation supporting 15 robots, working with the customer and robot vendor through design and implementation.\n- Mentored five consultants and represented the EMEA team in delivery and AI initiatives.\n- Delivered 100+ hours of customer training on product extensibility and earned peer-nominated Spirit Awards in 2021 and 2025."
+    },
+    {
+      "id": 4,
+      "heading": "Experience › Manhattan Associates, Senior Technology Consultant, June 2019 – January 2021",
+      "text": "Experience › Manhattan Associates, Senior Technology Consultant, June 2019 – January 2021\n\nEmployer: Manhattan Associates  \nRole: Senior Technology Consultant  \nDates: June 2019 – January 2021  \nLocation: Winnersh Triangle, United Kingdom  \n\n- Designed and delivered a REST API integration for an automated packing-machine solution supporting approximately 800–1,000 single-SKU orders per day.\n- Worked across the full implementation lifecycle, from discovery and requirements through technical design, development, implementation and go-live.\n- Co-developed a configuration-driven blueprint for API-based carrier integrations, including Metapack, Sorted and GFS, reducing effort for subsequent integrations by approximately 50%."
+    },
+    {
+      "id": 5,
+      "heading": "Experience › Manhattan Associates, Software Engineer → Senior Software Engineer, February 2015 – June 2019",
+      "text": "Experience › Manhattan Associates, Software Engineer → Senior Software Engineer, February 2015 – June 2019\n\nEmployer: Manhattan Associates  \nRole: Software Engineer, promoted to Senior Software Engineer  \nDates: February 2015 – June 2019  \nLocation: Bengaluru, India  \n\n- Built customer-specific extensions and reusable integrations for warehouse management systems and enterprise software environments.\n- Co-developed the Australia Carrier Integration Framework (ACIF), reducing estimated extension effort from approximately 200 hours to 80 hours, a 60% reduction, and supporting a shift towards fixed-fee implementation."
+    },
+    {
+      "id": 6,
+      "heading": "Experience › Infosys Ltd, Systems Engineer / Senior Systems Engineer, September 2012 – February 2015",
+      "text": "Experience › Infosys Ltd, Systems Engineer / Senior Systems Engineer, September 2012 – February 2015\n\nEmployer: Infosys Ltd  \nRole: Systems Engineer, then Senior Systems Engineer  \nDates: September 2012 – February 2015  \nLocation: Bengaluru, India  \n\n- Developed enterprise applications in the finance domain using C#, ASP.NET MVC, Web API and SQL Server.\n- Developed invoice-payment matching logic that increased automatic matches from approximately 10% to 20%, with a further 30% classified as likely matches requiring minimal manual intervention, leaving approximately 40% for full manual processing."
+    },
+    {
+      "id": 7,
+      "heading": "Projects › KubDoc Assistant, Enterprise-style Agentic RAG System (personal project)",
+      "text": "Projects › KubDoc Assistant, Enterprise-style Agentic RAG System (personal project)\n\nType: Personal project  \n\n- Built an agentic RAG application using LangGraph, featuring multistep planning, cyclic workflows, and conversational memory.\n- Developed and exposed AI workflows through REST APIs using Python and FastAPI, with Gemini embeddings, Qdrant Cloud for vector retrieval and FlashRank for semantic reranking.\n- Implemented NeMo Guardrails for security against off-topic, jailbreak, and prompt-injection inputs, with Portkey for LLM gateway integration.\n- Enhanced observability with LangSmith and Pydantic Logfire within agent workflows.\n- Created a RAGAS evaluation pipeline with a Streamlit interface, covering six evaluation metrics.\n- Supported document ingestion and processing for multiple formats, including PDF, HTML, TXT, DOCX, and PPTX."
+    },
+    {
+      "id": 8,
+      "heading": "Skills",
+      "text": "Skills\n\n- AI / LLM: Python, RAG, LangChain, LangGraph, OpenAI APIs, Gemini, Qdrant, FastAPI, FlashRank, NeMo Guardrails, RAGAS, Portkey, LangSmith, Pydantic Logfire, Claude Code, GitHub Copilot\n- Frontend: Angular, TypeScript, JavaScript, HTML, CSS, Bootstrap\n- Backend & Cloud: Python, FastAPI, .NET, .NET API, Azure Functions, MS SQL Server, Azure, C#"
+    },
+    {
+      "id": 9,
+      "heading": "Education › The National Institute of Engineering, Bachelor of Engineering in Electronics & Communication",
+      "text": "Education › The National Institute of Engineering, Bachelor of Engineering in Electronics & Communication\n\nInstitution: The National Institute of Engineering  \nDegree: Bachelor of Engineering in Electronics & Communication  \nLocation: Mysore, India  \nGrade: CGPA 9.0 out of 10.0"
+    },
+    {
+      "id": 10,
+      "heading": "Certifications",
+      "text": "Certifications\n\n- Claude Code in Action (Anthropic)\n- Microsoft Certified: Azure Fundamentals (Microsoft)"
+    }
+  ]
+}
