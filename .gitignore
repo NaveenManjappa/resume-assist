@@ -18,3 +18,6 @@ SPEC.md
 # Private resume data: original PDF, unredacted Markdown, private index
 *.pdf
 data/private/
+
+# macOS
+.DS_Store
